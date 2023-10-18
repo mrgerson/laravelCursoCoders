@@ -2,6 +2,7 @@
 
 @extends('layouts.app2')
 
+
 @section('title', 'laravel')
 
 @section('content')

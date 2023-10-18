@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 Route::get('/prueba', function () {
 
-    $post = Post::find(1);
+    $user = User::find(1);
 
-    return $post->category;
+    return $user->address;
 });

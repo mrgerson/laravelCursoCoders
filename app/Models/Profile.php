@@ -19,4 +19,9 @@ class Profile extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    //relación uno a uno con address
+    public function address(){
+        return $this->hasOne(Address::class);
+    }
 }

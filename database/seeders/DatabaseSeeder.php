@@ -17,10 +17,10 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\User::factory(100)->create()->each(function ($user) {
 
-            Profile::factory()->create([
+            Profile::factory(1)->create([
                 'user_id' => $user->id,
             ])->each(function ($profile) {
-                Address::factory()->create([
+                Address::factory(1)->create([
                     'profile_id' => $profile->id,
                 ]);
             });

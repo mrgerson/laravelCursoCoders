@@ -25,7 +25,13 @@ Route::get('/', function () {
 
 Route::get('/prueba', function () {
 
-    $course = Course::find(1);
+    $post = Post::find(1);
 
-    return $course->lessons;
+    /* $comments = $post->comments()->create([
+        'body' => 'este es una prueba'
+    ]); */
+
+    $post->tags()->attach([1,2,3]);
+
+    return "agregado";
 });

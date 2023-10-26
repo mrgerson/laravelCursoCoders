@@ -15,13 +15,26 @@ class Post extends Model
     }
 
     //relacion de muchos a muchos con tag
-    public function tags(){
+    /* public function tags(){
         return $this->belongsToMany(Tag::class)->withTimestamps();
+    } */
+
+    //relacion de muchos a muchos poliforfica con tags
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable')->withTimestamps();
     }
 
     //relacion de uno a uno polimorfica con image
     public function image(){
         return $this->morphOne(Image::class, 'imageable');
     }
+
+    //relcion de uno a muchos polimorfica con comentarios
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+
 
 }

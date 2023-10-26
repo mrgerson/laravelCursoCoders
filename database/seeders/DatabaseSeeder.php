@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+       $this->call(UserSeeder::class);
+
         \App\Models\User::factory(100)->create()->each(function ($user) {
 
             Profile::factory(1)->create([
@@ -31,7 +33,11 @@ class DatabaseSeeder extends Seeder
         });
         \App\Models\Category::factory(10)->create();
 
-        \App\Models\Post::factory(100)->create();
+        \App\Models\Post::factory(100)->create()->each(function ($post) {
+            $post->image()->create([
+                'url' => 'url_image'
+            ]);
+        });
 
         Tag::factory(10)->create();
 

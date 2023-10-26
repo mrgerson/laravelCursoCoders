@@ -19,4 +19,10 @@ class Course extends Model
         return $this->hasManyThrough(Lesson::class, Section::class);
     }
 
+    //relacion de muchos a muchos con tags
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
+
 }

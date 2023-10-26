@@ -9,11 +9,7 @@ class Profile extends Model
 {
     use HasFactory;
 
-    protected $guarded = [
-        'id',
-        'created_at',
-        'updated_at'
-    ];
+    protected $guarded = [];
 
     //relacion de uno a uno o de uno a muchos  inversa con perfil
     public function user(){

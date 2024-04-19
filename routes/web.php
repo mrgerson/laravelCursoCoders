@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\QueriesAll;
 use App\Models\User;
 use App\Models\Profile;
 use App\Models\Category;
@@ -35,3 +36,5 @@ Route::get('/prueba', function () {
 
     return "agregado";
 });
+
+Route::get('pdf', [QueriesAll::class, 'index']);
